@@ -2,6 +2,7 @@ package Applicatie;
 
 import java.util.Random;
 import java.util.Scanner;
+//OOP == Object Oriented Programming
 
 public class Applicatie {
 	static String[] bord = new String[12];
