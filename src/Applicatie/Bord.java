@@ -7,5 +7,27 @@ public class Bord {
      */
 
     //Hier zien we dus dat we een array maken van de nieuwe klasse 'Rij' in plaats van de strings die weer gebruikten
-     Rij[] veld = new Rij[12];
+	//veld = private, dus niet toegankelijk buiten deze klasse om. Dit wordt meestal gedaan voor veiligheid
+     private Rij[] veld = new Rij[12];
+     
+     //De constructor kan het veld een mooie begin waarde geven
+     public Bord() {
+    	 for (int i = 0; i < veld.length; i++) {
+			veld[i] = new Rij("-","-","-","-");
+			//this.setVeld(new Rij("-","-","-","-"), i);		<-- dit doet precies hetzelfde, maakt gebruik van de onderstaande setter
+			
+			veld[i].print();
+		}
+     }
+     
+     //GETTERS en SETTERS
+     //Omdat veld private is, maar je het wel op wilt kunnen vragen, of waarden toe wilt kunnen voegen, bestaan er SETTERS en GETTERS.
+     //Dit zijn methodes waarmee je private variabelen van buitenaf een waarde kan geven of op kan vragen
+     public void setVeld(Rij rij, int index) {
+    	 veld[index] = rij;
+     }
+     
+     public Rij[] getVeld() {
+    	 return veld;
+     }
 }
